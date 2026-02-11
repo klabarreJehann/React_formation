@@ -13,15 +13,23 @@ function Exercice() {
       <h2>Consigne :</h2>
       <p>
         1. Créer un composant enfant qui affiche les produits, l'appeler deux
-        fois : Une fois pour les fruits / une fois pour les légumes
+        fois : Une fois pour les fruits / une fois pour les légumes. Pour trier,
+        on peut utiliser .filter()
       </p>
       <p>
         2. Créer une checkbox qui permettra d'afficher/masquer les produits qui
         ne sont plus en stock (quand number est égal à 0)
       </p>
       <p>
-        3. Faire une barre de recherche qui permettra de filtrer les éléments
+        3. Faire une barre de recherche qui permettra de filtrer les éléments (
+        pour le trie on peut utiliser .includes(). Exemple :
+        data.includes("test") renverra 'true' si on a 'test' à l'intérieur de
+        'data' )
       </p>
+      {/* Exemple correction */}
+      <Input type="checkbox" /> Afficher hors stock
+      <ProductTable />
+      <ProductTable />
     </>
   );
 }
