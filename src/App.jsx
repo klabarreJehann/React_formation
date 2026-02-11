@@ -6,6 +6,7 @@ import Event from "./components/Event";
 import Exercice from "./components/Exercices/Exercice";
 
 import Form from "./components/Form";
+import HookUseEffect from "./components/HookUseEffect";
 import MyButton from "./components/MyButton";
 import SharingData from "./components/SharingData";
 
@@ -51,6 +52,9 @@ function App() {
 
       <h2>Exercice</h2>
       <Exercice />
+
+      <h2>Use Effect</h2>
+      <HookUseEffect />
     </>
   );
 }
