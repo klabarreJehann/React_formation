@@ -3,6 +3,7 @@ import ConditionalRender from "./components/ConditionalRender";
 import Count from "./components/Count";
 import DisplayList from "./components/DisplayList";
 import Event from "./components/Event";
+import Form from "./components/Form";
 import MyButton from "./components/MyButton";
 import SharingData from "./components/SharingData";
 
@@ -42,6 +43,9 @@ function App() {
 
       <h2>Partage de données entre composants</h2>
       <SharingData />
+
+      <h2>Formulaire / inputs</h2>
+      <Form />
     </>
   );
 }
