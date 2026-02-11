@@ -3,7 +3,8 @@ import ConditionalRender from "./components/ConditionalRender";
 import Count from "./components/Count";
 import DisplayList from "./components/DisplayList";
 import Event from "./components/Event";
-import Exercice from "./components/Exercice";
+import Exercice from "./components/Exercices/Exercice";
+
 import Form from "./components/Form";
 import MyButton from "./components/MyButton";
 import SharingData from "./components/SharingData";

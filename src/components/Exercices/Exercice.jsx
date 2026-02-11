@@ -1,4 +1,19 @@
+import { useState } from "react";
+import ProductTable from "./ProductTable";
+
 function Exercice() {
+  const [ckeckBoxValue, setCheckBoxValue] = useState(false);
+
+  const [searchValue, setSearchValue] = useState("");
+
+  function handleCheckBoxChange(e) {
+    setCheckBoxValue(e.target.checked);
+  }
+
+  function handleSearchChange(e) {
+    setSearchValue(e.target.value);
+  }
+
   const products = [
     { category: "Fruits", price: "$1", number: 0, name: "Banana" },
     { category: "Fruits", price: "$1", number: 2, name: "Mango" },
@@ -7,6 +22,11 @@ function Exercice() {
     { category: "Vegetables", price: "$4", number: 0, name: "Carrot" },
     { category: "Vegetables", price: "$1", number: 6, name: "Zucchini" },
   ];
+
+  const fruits = products.filter((product) => product.category === "Fruits");
+  const vegetables = products.filter(
+    (product) => product.category === "Vegetables"
+  );
 
   return (
     <>
@@ -27,9 +47,29 @@ function Exercice() {
         'data' )
       </p>
       {/* Exemple correction */}
-      <Input type="checkbox" /> Afficher hors stock
-      <ProductTable />
-      <ProductTable />
+      <input
+        type="checkbox"
+        onChange={handleCheckBoxChange}
+        checked={ckeckBoxValue}
+      />
+      Afficher hors stock
+      <br />
+      <input
+        type="text"
+        placeholder="Rechercher"
+        onChange={handleSearchChange}
+        value={searchValue}
+      />
+      <ProductTable
+        data={fruits}
+        OutOfStock={ckeckBoxValue}
+        searchText={searchValue}
+      />
+      <ProductTable
+        data={vegetables}
+        OutOfStock={ckeckBoxValue}
+        searchText={searchValue}
+      />
     </>
   );
 }
