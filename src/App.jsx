@@ -6,6 +6,7 @@ import { QuickStart } from "./pages/QuickStart";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import { Navbar } from "./components/Navbar";
+import { FirstHttpRequest } from "./pages/FirstHttpRequest";
 
 function App() {
   return (
@@ -25,7 +26,13 @@ function App() {
             element={<QuickStart />}
             title="quick-start"
           />
+          <Route
+            path="requete-http"
+            element={<FirstHttpRequest />}
+            title="Ma 1ere requete HTTP"
+          />
 
+          {/* // Page 404 */}
           <Route path="*" element={<h1>NOT FOUND</h1>} title="not found" />
         </Routes>
       </BrowserRouter>

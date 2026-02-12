@@ -27,6 +27,13 @@ export const Navbar = () => {
             <Link to="quick-start">
               <Button icon="manual" text="quick-start" variant="minimal" />
             </Link>
+            <Link to="requete-http">
+              <Button
+                icon="globe-network"
+                text="Requete HTTP"
+                variant="minimal"
+              />
+            </Link>
             <NavbarDivider />
             <Button icon="user" variant="minimal" />
             <Button icon="notifications" variant="minimal" />
