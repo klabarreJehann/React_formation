@@ -28,7 +28,7 @@ export const FirstHttpRequest = () => {
 
   const loadMessages2 = async () => {
     try {
-      const response = await axios.get("https://localhost:8000/api/courriers");
+      const response = await axios.get("/api/courriers");
       console.log(response.data);
       setResponseApi(response.data);
     } catch (error) {
