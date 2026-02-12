@@ -9,3 +9,16 @@
   color: #0026ff;
   font-weight: bold;
 }
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* Z-index élevé pour garantir que la navbar reste au premier plan */
+}
+
+/* Pour éviter que le contenu passe sous la navbar */
+body {
+  padding-top: 50px; /* Ajustez cette valeur selon la hauteur de votre navbar */
+}
