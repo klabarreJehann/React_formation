@@ -2,7 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const FirstHttpRequest = () => {
-  const [messages, setMessages] = useState([]);
+  const [responseApi, setResponseApi] = useState({
+    courriers: [],
+    pagination: {},
+    filters: {},
+  });
 
   const loadMessages = () => {
     axios
@@ -10,7 +14,7 @@ export const FirstHttpRequest = () => {
       .then((response) => {
         // Code qui sera exécuté une fois la réponse reçu, uniquement si la requête est reussie
         console.log(response.data);
-        setMessages(response.data);
+        setResponseApi(response.data);
       })
       .catch((error) => {
         // Code qui sera exécuté une fois la réponse reçu, uniquement si la requête est en erreur
@@ -26,7 +30,7 @@ export const FirstHttpRequest = () => {
     try {
       const response = await axios.get("https://localhost:8000/api/courriers");
       console.log(response.data);
-      setMessages(response.data);
+      setResponseApi(response.data);
     } catch (error) {
       console.error(error);
     } finally {
@@ -43,8 +47,8 @@ export const FirstHttpRequest = () => {
     <>
       <h1>Ma 1ere requete HTTP</h1>
 
-      {messages.map((product) => (
-        <p key={product.id}>{product.name}</p>
+      {responseApi.courriers.map((courrier) => (
+        <p key={courrier.id}>{courrier.responsable}</p>
       ))}
     </>
   );

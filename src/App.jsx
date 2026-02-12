@@ -7,6 +7,7 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import { Navbar } from "./components/Navbar";
 import { FirstHttpRequest } from "./pages/FirstHttpRequest";
+import { Courriers } from "./pages/WithApiSymfony/Courriers";
 
 function App() {
   return (
@@ -17,11 +18,6 @@ function App() {
         <Routes>
           <Route path="" element={<h1>Page d'accueil</h1>} title="Accueil" />
           <Route
-            path="courriers"
-            element={<h1>courriers</h1>}
-            title="courriers"
-          />
-          <Route
             path="quick-start"
             element={<QuickStart />}
             title="quick-start"
@@ -31,6 +27,7 @@ function App() {
             element={<FirstHttpRequest />}
             title="Ma 1ere requete HTTP"
           />
+          <Route path="courriers" element={<Courriers />} title="courriers" />
 
           {/* // Page 404 */}
           <Route path="*" element={<h1>NOT FOUND</h1>} title="not found" />

@@ -21,9 +21,6 @@ export const Navbar = () => {
             <Link to="/">
               <Button icon="home" text="Accueil" variant="minimal" />
             </Link>
-            <Link to="courriers">
-              <Button icon="document" text="courriers" variant="minimal" />
-            </Link>
             <Link to="quick-start">
               <Button icon="manual" text="quick-start" variant="minimal" />
             </Link>
@@ -33,6 +30,9 @@ export const Navbar = () => {
                 text="Requete HTTP"
                 variant="minimal"
               />
+            </Link>
+            <Link to="courriers">
+              <Button icon="inbox" text="courriers" variant="minimal" />
             </Link>
             <NavbarDivider />
             <Button icon="user" variant="minimal" />
