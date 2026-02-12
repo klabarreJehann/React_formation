@@ -2,15 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const FirstHttpRequest = () => {
-  const [products, setProducts] = useState([]);
+  const [messages, setMessages] = useState([]);
 
-  const loadProducts = () => {
+  const loadMessages = () => {
     axios
-      .get("http://localhost:3001/products")
+      .get("/api/courriers")
       .then((response) => {
         // Code qui sera exécuté une fois la réponse reçu, uniquement si la requête est reussie
         console.log(response.data);
-        setProducts(response.data);
+        setMessages(response.data);
       })
       .catch((error) => {
         // Code qui sera exécuté une fois la réponse reçu, uniquement si la requête est en erreur
@@ -22,11 +22,11 @@ export const FirstHttpRequest = () => {
       });
   };
 
-  const loadProducts2 = async () => {
+  const loadMessages2 = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/products");
+      const response = await axios.get("https://localhost:8000/api/courriers");
       console.log(response.data);
-      setProducts(response.data);
+      setMessages(response.data);
     } catch (error) {
       console.error(error);
     } finally {
@@ -35,15 +35,15 @@ export const FirstHttpRequest = () => {
   };
 
   useEffect(() => {
-    loadProducts();
-    // loadProducts2();
+    loadMessages();
+    // loadMessages2();
   }, []);
 
   return (
     <>
       <h1>Ma 1ere requete HTTP</h1>
 
-      {products.map((product) => (
+      {messages.map((product) => (
         <p key={product.id}>{product.name}</p>
       ))}
     </>
